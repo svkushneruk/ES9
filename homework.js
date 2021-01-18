@@ -2,29 +2,28 @@
 
 const employers = ['Alex', '', 'ludmila', 'Viktor', '', 'oleg', 'iNna', 'Ivan', 'Alex', 'Olga', ' Ann'];
 
-
 const employersNames = employers.filter(item => {
     if (item.length > 0 && item.length != '') {
         return item;
 	}
 }).map(item => item.toLocaleLowerCase().trim());
 
-var sponsors = {
+const sponsors = {
     cash: [40000, 5000, 30400, 12000],
     eu: ['SRL', 'PLO', 'J&K'],
     rus: ['RusAuto', 'SBO']
 };
 
 function calcCash(own = 0) {
-    var everyCash = Array.prototype.slice.call(arguments);
-    var total = own;
+    const everyCash = Array.prototype.slice.call(arguments);
+    let total = own;
     for (var i = 0; i < everyCash[1].length; i++) {
         total += +everyCash[1][i];
     }
     return total;
 }
 
-var money = calcCash(null, sponsors.cash);
+const money = calcCash(null, sponsors.cash);
 
 function makeBusiness(owner, director, cash, emp) {
     director = director || 'Victor';
