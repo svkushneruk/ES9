@@ -15,12 +15,7 @@ const sponsors = {
 };
 
 function calcCash(own = 0) {
-    const everyCash = Array.prototype.slice.call(arguments);
-    let total = own;
-    for (var i = 0; i < everyCash[1].length; i++) {
-        total += +everyCash[1][i];
-    }
-    return total;
+    return [...sponsors.cash].reduce((sum, currentItem) => sum + currentItem);
 }
 
 const money = calcCash(null, sponsors.cash);
