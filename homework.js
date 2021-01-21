@@ -14,11 +14,9 @@ const sponsors = {
     rus: ['RusAuto', 'SBO']
 };
 
-function calcCash(own = 0) {
-    return [...sponsors.cash].reduce((sum, currentItem) => sum + currentItem);
+function calcCash(cash) {
+    return [...cash].reduce((sum, currentItem) => sum + currentItem);
 }
-
-const money = calcCash(null, sponsors.cash);
 
 function makeBusiness({owner, director = 'Victor', cash, emp}) {
     console.log(`We have a business. Owner: ${owner}, director: ${director}. Our budget: ${cash}. And our employers: ${emp}`);
@@ -29,6 +27,6 @@ function makeBusiness({owner, director = 'Victor', cash, emp}) {
 
 makeBusiness({
     owner: 'Sam',
-    cash: money,
+    cash: calcCash(sponsors.cash),
     emp: employersNames
 });
